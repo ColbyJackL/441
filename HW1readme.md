@@ -1,0 +1,3 @@
+At first I was overthinking it, but once I realized it was just a basic single page HTML document it was just a little remebering from last class and some online help.
+Once I had a basic html layout there I wanted to spice it up a little bit and add some CSS. I put the CSS directly in the HTML document but in the future I would like to move the CSS to it's own file for organization once it gets more complex.
+HTML is coming back to me pretty well, I just need to touch up on how to link Javascript, HTML, and CSS together without making a jumbled mess. Hopefully I'll get better at that this semester!
