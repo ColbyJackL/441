@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <title>MART 441 Timer</title>
+    <style>
+        /*body {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;;
+        }*/
+
+        span#countdown {
+            display: flex;
+            padding-left: 1em;
+            /*padding-top: 1em;    */
+            /*WHy is the timer centered but the "TImer Done" Is not?! I can not get this to work!!!!!  */
+            margin: auto;
+            min-width: 400px;
+            max-width: 30%;
+            min-height: 300px;
+            font-weight: bold;
+            font-size: 4em;
+            float: center; /*If I comment this out then the timer text stays centered but the green background disappears completely. While the Timer Done screen looks exactly as it does with this line not commented out. confused for sure*/
+            background: LawnGreen;
+            line-height: 80px;
+            align-items: center;
+
+        /*}
+        span#countdown.timer {
+          padding-left: 2em;
+        }*/
+
+        /*Me trying to edit the timer display and the timer done screen separately to center them with different padding since they are being weird but no..*/
+
+        /*p#countElem {
+          padding-left: 2em;
+        }*/
+    </style>
+</head>
+
+<body>
+
+    <span id="countdown" class="timer"></span>
+
+
+    <script>
+        var seconds = 20;
+
+        function secondPassed() {
+            var minutes = Math.round((seconds - 30) / 60);
+            var remainingSeconds = seconds % 60;
+            if (remainingSeconds < 10) {
+                remainingSeconds = "0" + remainingSeconds;
+            }
+            document.getElementById('countdown').innerHTML = "<p id='countElem'>Countdown Timer: " + remainingSeconds + "</p>";
+            if (seconds == 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = "Timer Done!";
+                document.getElementById('countdown').style.backgroundColor = 'red';
+            } else {
+                seconds--;
+            }
+        }
+
+        var countdownTimer = setInterval('secondPassed()', 250);
+    </script>
+
+</body>
+
+</html>
