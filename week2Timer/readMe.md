@@ -10,4 +10,4 @@ But for a while the timer was centered perfectly but when it got to "timer done"
 
 
 I am pretty confused as to how this all happened and why the text objects were appearing differently when I thought they should have the same properties. 
-However, as confused as I still am I can't say that it wasn't satisfying to magically make it work. 
+However, I can't say that it wasn't satisfying to magically make it work, even though I would like to understand why it worked a little better. 
