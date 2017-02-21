@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        .adventureBox {
+            flex: auto;
+            float: center;
+            margin: 10%;
+            padding: 10%;
+            max-width: 100%;
+            background: rgb(112, 170, 149);
+            height: 100%;
+            display: inline-block;
+            border: 5px solid black;
+            font-family: sans-serif;
+        }
+    </style>
+    <title> Choose Your Own Adventure </title>
+</head>
+<body>
+
+    <div id="header" , class="adventureBox">
+        <h1>
+        <center>Planetary Escape</center>
+      </h1>
+        <p>In this adventure you will take on the role of an unknown creature. You have just woken up on a mysterious planet and must now make the choice...
+            <br>
+            <b>
+            Would you like to try to escape or would you like to give up and die?
+            </b>
+        </p>
+        <center><button onclick="escape()">Escape</button>
+            <button onclick="giveUp()"> Give Up </button>
+            <p id="planetEscape"></p>
+        </center>
+    </div>
+
+    <script>
+        function escape() {
+            document.getElementById("planetEscape").innerHTML = "To start the escape, are you hurt at all? <p> <button onclick='yes()'> Yes </button> <button onclick='no()'> No </button> </p> <div id='hurt'</div>";
+        }
+
+        function giveUp() {
+            document.getElementById("planetEscape").innerHTML = " <b> DEAD </b>";
+        }
+
+        function yes() {
+            document.getElementById('hurt').innerHTML = " <b> DEAD </b>";
+        }
+
+        function no() {
+            document.getElementById('hurt').innerHTML =
+                "Great, Do you want to try to climb the pipes, or go through the air vent? <p> <button onclick='climb()'> Climb Up </button> <button onclick='airVent()'> Air Vent </button> </p> <div id='notHurt'</div>";
+        }
+
+
+        function climb() {
+            document.getElementById('notHurt').innerHTML =
+                "Good, you made it to the top, but the building is too tall, you could either jump into the pool below or attempt the trecherous climb... <p> <button onclick='win1()'> Climb Down </button> <button onclick='die1()'> Jump  </button> </p> <div id='climbUp'</div>";
+        }
+
+        function airVent() {
+            document.getElementById('notHurt').innerHTML =
+                "Good you made it into the air vent but there is a turn T in the vent. Do you go Left or Right? <p> <button onclick='win2()'> Left </button> <button onclick='die2()'> Right </button> </p> <div id='airVent'</div>";
+        }
+
+        function win1() {
+            document.getElementById('climbUp').innerHTML = "You made it to open air and solid ground! <b> YOU WIN </b>  <div id='win1' </div>";
+        }
+
+        function win2() {
+            document.getElementById('airVent').innerHTML = "You made it to open air and solid ground! <b> YOU WIN </b>  <div id='win2' </div>";
+        }
+
+        function die1() {
+            document.getElementById('climbUp').innerHTML = "The friendly looking pool turned out to be acid... <b> DEAD </b>  <div id='die1' </div>";
+        }
+
+        function die2() {
+            document.getElementById('airVent').innerHTML = "A giant rat ended up living down this way... <b> DEAD </b>  <div id='die2' </div>";
+        }
+
+        // button.addEventListener("click", function() {});
+    </script>
+</body>
+
+</html>
